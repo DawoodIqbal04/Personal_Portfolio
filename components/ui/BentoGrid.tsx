@@ -1,6 +1,8 @@
 "use client";
 
-import Lottie from 'react-lottie'
+import dynamic from 'next/dynamic'
+// import Lottie from 'react-lottie'
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 import { cn } from '@/lib/utils';
 import Image from "next/image";
 import { BackgroundGradientAnimation } from "./GradientBg";

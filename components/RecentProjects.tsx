@@ -1,27 +1,24 @@
 import { projects } from '@/data'
-import { div } from 'motion/react-client'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
 import Image from 'next/image'
-import { FaLocationArrow } from 'react-icons/fa'
-import { IoMdArrowDropright } from 'react-icons/io'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
 const RecentProjects = () => {
   return (
-    <section className='py-20'>
+    <section className='pt-20 pb-10' id='projects'>
         <h1 className='heading'>
-            A small selection of my {''} <span className='text-purple'>recent projects</span>
+            A Small Selection of My {''} <span className='text-purple'>Recent Projects</span>
         </h1>
-        <div className='flex flex-wrap items-center justify-center p-4 gap-y-7 gap-x-24 mt-10'>
+        <div className='md:flex flex-wrap sm:grid grid-cols-1 items-center justify-center p-4 md:gap-x-24'>
             {projects.map(({title, des, iconLists, id, img, link}) => (
-                <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] lg:w-[40vw]'>
-                    <PinContainer title={link} href={link} className='pin' >
-                        <div className='flex items-center justify-center relative sm:w-[570px] lg:w-[40vw] sm:h-[40vh] overflow-hidden h-[30vh] mb-10'>
+                <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-full md:w-[40vw]'>
+                    <PinContainer title={title} href={link} className='pin' >
+                        <div className='flex items-center justify-center relative sm:w-[90vw] md:w-[40vw] lg:w-[40vw] sm:h-[40vh] overflow-hidden h-[30vh] mb-10'>
                             <div className='relative w-full h-full lg:rounded-3xl overflow-hidden bg-[#13162d]'>
                                 <Image src='/bg.png' alt='cover' width={500} height={500} />
                             </div>
-                            <Image src={img} alt={title} width={500} height={500} className='z-10 absolute bottom-0' />
+                            <Image src={img} alt={title} width={500} height={500} className='z-10 w-full h-full absolute md:bottom-0' />
                         </div>
                         <h1 className='font-bold lg:text-2xl md:text-xl line-clamp-1 text-base'>{title}</h1>
                         <p className='lg:text-xl lg:font-normal font-light text-sm line-clamp-2'>{des}</p>

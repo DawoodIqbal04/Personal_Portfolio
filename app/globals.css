@@ -91,3 +91,7 @@
 .pin:hover .icon {
   transform: rotate(0deg);
 }
+
+.magic:hover .icon {
+  transform: rotate(310deg);
+}

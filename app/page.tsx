@@ -1,8 +1,12 @@
 import Hero from "@/components/Hero";
 import { FloatingNav } from "@/components/ui/Navbar";
 import { navItems } from "@/data";
-import Grid from "@/components/GridSection";
+import AboutSection from "@/components/AboutSection";
 import RecentProjects from "@/components/RecentProjects";
+import Testimonials from "@/components/Testimonials";
+import ExperienceSection from "@/components/ExperienceSection";
+import Approach from "@/components/Approach";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -10,8 +14,12 @@ export default function Home() {
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
-        <Grid />
+        <AboutSection />
         <RecentProjects />
+        <Testimonials />
+        <ExperienceSection />
+        <Approach />
+        <Footer />
       </div>
     </main>
   );
