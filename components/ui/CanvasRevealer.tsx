@@ -10,7 +10,7 @@ export function CanvasRevealEffectDemo() {
         <Card
           title="Planning & Strategy"
           icon={<AceternityIcon order="Phase 01" />}
-          desc="Together, we&apos;ll shape your website&apos;s vision—defining its goals, audience, and must-have features. We&apos;ll craft a seamless structure, intuitive navigation, and a content plan that drives engagement."
+          desc="Together, we'll shape your website's vision—defining its goals, audience, and must-have features. We'll craft a seamless structure, intuitive navigation, and a content plan that drives engagement."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -34,7 +34,7 @@ export function CanvasRevealEffectDemo() {
         <Card
           title="Development & Launch"
           icon={<AceternityIcon order="Phase 3" />}
-          desc="This is where the vision comes to life! With the approved design as my blueprint, I&apos;ll craft your website from scratch, turning ideas into seamless code."
+          desc="This is where the vision comes to life! With the approved design as my blueprint, I'll craft your website from scratch, turning ideas into seamless code."
         >
           <CanvasRevealEffect
             animationSpeed={3}
@@ -68,7 +68,7 @@ const Card = ({
         background: "rgb(4,7,29)",
         backgroundColor:
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
-      }}    
+      }}
     >
       <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
       <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
@@ -113,7 +113,10 @@ const AceternityIcon = ({ order }: { order: string }) => {
   );
 };
 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({
+  className,
+  ...rest
+}: React.SVGProps<SVGSVGElement> & { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

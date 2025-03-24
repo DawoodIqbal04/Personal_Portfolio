@@ -1,9 +1,8 @@
 "use client";
 
-import dynamic from 'next/dynamic'
-// import Lottie from 'react-lottie'
+import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { poppins } from "../Hero";
@@ -11,7 +10,7 @@ import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import { MagicButton } from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-import { RiCheckDoubleFill } from 'react-icons/ri';
+import { RiCheckDoubleFill } from "react-icons/ri";
 
 export const BentoGrid = ({
   className,
@@ -162,7 +161,9 @@ export const BentoGridItem = ({
               </div>
               <MagicButton
                 title={copied ? "Email Copied" : "Copy My Email"}
-                icon={copied ? <RiCheckDoubleFill size={20} /> : <IoCopyOutline />}
+                icon={
+                  copied ? <RiCheckDoubleFill size={20} /> : <IoCopyOutline />
+                }
                 position="left"
                 otherClasses="!bg-[#161a31]"
                 onClick={handleCopy}
