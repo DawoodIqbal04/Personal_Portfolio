@@ -38,6 +38,7 @@ export function CanvasRevealEffectDemo() {
         >
           <CanvasRevealEffect
             animationSpeed={3}
+            dotSize={5}
             containerClassName="bg-sky-600 rounded-2xl overflow-hidden"
             colors={[[125, 211, 252]]}
           />

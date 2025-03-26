@@ -6,19 +6,19 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const RecentProjects = () => {
   return (
-    <section className="pt-20 pb-10" id="projects">
+    <section className="pt-20 md:pb-10" id="projects">
       <h1 className="heading">
         A Small Selection of My {""}{" "}
         <span className="text-purple">Recent Projects</span>
       </h1>
-      <div className="md:flex flex-wrap sm:grid grid-cols-1 items-center justify-center p-4 md:gap-x-24">
+      <div className="md:flex flex-wrap sm:grid grid-cols-1 -space-y-40 items-center justify-center p-4 md:gap-x-24">
         {projects.map(({ title, des, iconLists, id, img, link }) => (
           <div
             key={id}
-            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-full md:w-[40vw]"
+            className="h-[41rem] lg:min-h-[32.5rem] flex items-center justify-center w-full md:w-[40vw]"
           >
             <PinContainer title={title} href={link} className="pin">
-              <div className="flex items-center justify-center relative sm:w-[90vw] md:w-[40vw] lg:w-[40vw] sm:h-[40vh] overflow-hidden h-[30vh] mb-10">
+              <div className="flex items-center justify-center relative w-[80vw] md:w-[40vw] lg:w-[40vw] sm:h-[40vh] overflow-hidden h-[30vh] mb-10">
                 <div className="relative w-full h-full lg:rounded-3xl overflow-hidden bg-[#13162d]">
                   <Image src="/bg.png" alt="cover" width={500} height={500} />
                 </div>

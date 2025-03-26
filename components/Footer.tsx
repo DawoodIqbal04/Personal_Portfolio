@@ -7,14 +7,14 @@ import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className=" w-full py-10 " id="contact">
+    <footer className=" w-full md:py-10 pb-10 " id="contact">
       <div className="absolute w-full bottom-0  -right-75">
         <Image
           src="/grid.svg"
           alt="footerBg"
           height={500}
           width={500}
-          className="w-full h-full opacity-90"
+          className="w-full md:h-full h-[80vh]"
         />
       </div>
       <div className="flex flex-col items-center justify-center ">
@@ -23,7 +23,7 @@ const Footer = () => {
           <span className="text-purple">Digital Presence</span> To The{" "}
           <span className="text-purple">Next Level?</span>
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-lg text-center">
+        <p className="text-white-200 md:mt-10 my-5 md:text-lg text-base text-center">
           Reach Me Out Today And Let&apos;s Discuss That How I Can Help You In
           Your Digital Journey.
         </p>
@@ -35,7 +35,7 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <div className="flex items-center justify-between w-full mt-28">
+      <div className="flex items-center justify-between w-full mt-12 md:mt-28">
         <p>CopyRight © 2024-2025 | Muhammad Dawood Iqbal </p>
         <div className="flex items-center gap-4">
           <Link
