@@ -1,9 +1,13 @@
-import React from "react";
+'use client';
+
+import React, {useEffect, useRef} from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { MagicButton } from "./ui/MagicButton";
 import { Poppins, Big_Shoulders_Display } from "next/font/google";
 import { FaArrowRightLong } from "react-icons/fa6";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -15,7 +19,23 @@ export const shoulder = Big_Shoulders_Display({
 });
 
 const Hero = () => {
-  return (
+  useGSAP(() => {
+    gsap.from(".head-one", {
+      opacity: 0,
+      y: 20,
+      duration: 2,
+      delay: 2,
+      ease: "power4.out",
+    })
+    gsap.from(".head-two", {
+      opacity: 0,
+      y: 20,
+      duration: 2,
+      delay: 2,
+      ease: "power4.out",
+    })
+  })
+  return ( 
     <div className="pb-20 pt-24 max-h-[100vh]">
       <div>
         <Spotlight />
@@ -28,7 +48,7 @@ const Hero = () => {
       <div className="flex justify-center my-20 z-10 relative">
         <div className="max-w-[88vw] md:max-w-2xl lg:max-w-[70vw] flex flex-col items-center justify-center gap-3">
           <h2
-            className={`${poppins.className} Uppercase tracking-widest text-sm text-blue-100 max-w-96 text-center`}
+            className={`${poppins.className} head-one Uppercase tracking-widest text-sm text-blue-100 max-w-96 text-center`}
           >
             Next.js redefines web magic—dynamic, fast, and endlessly adaptable
           </h2>
@@ -39,7 +59,7 @@ const Hero = () => {
             />
           </h1>
           <p
-            className={`${poppins.className} text-center text-sm md:text-base lg:text-base tracking-wider`}
+            className={`${poppins.className} head-two text-center text-sm md:text-base lg:text-base tracking-wider`}
           >
             Hi, I&apos;m Muhammad Dawood Iqbal, A Full Stack Developer Based In
             Pakistan
