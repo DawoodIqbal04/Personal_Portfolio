@@ -14,7 +14,7 @@ const images = [
   "/js.svg",
   "/css.svg",
   "/html.svg",
-  "/sanity.svg",
+  "/Sanity.svg",
   "/next.svg",
   "/tail.svg",
   "/three.svg",

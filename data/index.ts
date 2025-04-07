@@ -19,8 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title:
-      "I'm flexible and available for communication across various time zones.",
+    title: "I'm flexible and available for communication across various time zones.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -95,7 +94,7 @@ export const projects = [
       "/next.svg",
       "/tail.svg",
       "/ts.svg",
-      "/sanity.svg",
+      "/Sanity.svg",
       "shadcn.svg",
       "/c.svg",
     ],
