@@ -1,13 +1,30 @@
-'use client';
+"use client";
 
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { MagicButton } from "./ui/MagicButton";
 import { Poppins, Big_Shoulders_Display } from "next/font/google";
 import { FaArrowRightLong } from "react-icons/fa6";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import Link from "next/link";
+import Image from "next/image";
+
+const images = [
+  "/ts.svg",
+  "/js.svg",
+  "/css.svg",
+  "/html.svg",
+  "/sanity.svg",
+  "/next.svg",
+  "/tail.svg",
+  "/three.svg",
+  "/gsap.svg",
+  "/py.svg",
+  "/st.svg",
+  "/gemini.svg",
+  "/shadcn.svg",
+  "/swiper.svg",
+];
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -19,23 +36,17 @@ export const shoulder = Big_Shoulders_Display({
 });
 
 const Hero = () => {
-  useGSAP(() => {
-    gsap.from(".head-one", {
-      opacity: 0,
-      y: 20,
-      duration: 2,
-      delay: 2,
-      ease: "power4.out",
-    })
-    gsap.from(".head-two", {
-      opacity: 0,
-      y: 20,
-      duration: 2,
-      delay: 2,
-      ease: "power4.out",
-    })
-  })
-  return ( 
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 800);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
     <div className="pb-20 pt-24 max-h-[100vh]">
       <div>
         <Spotlight />
@@ -47,11 +58,21 @@ const Hero = () => {
 
       <div className="flex justify-center my-20 z-10 relative">
         <div className="max-w-[88vw] md:max-w-2xl lg:max-w-[70vw] flex flex-col items-center justify-center gap-3">
-          <h2
-            className={`${poppins.className} head-one Uppercase tracking-widest text-sm text-blue-100 max-w-96 text-center`}
-          >
-            Next.js redefines web magic—dynamic, fast, and endlessly adaptable
-          </h2>
+          <div className="flex items-center justify-center gap-5 mb-5 md:gap-10">
+            {[0, 1, 2, 3, 4].map((offset) => (
+              <div key={offset} className="flex items-center">
+                <div className="w-10 h-10 md:ml-0 ml-4 border border-white/[0.2] rounded-full flex items-center justify-center">
+                  <Image
+                    src={images[(index + offset) % images.length]}
+                    alt=""
+                    height={50}
+                    width={50}
+                    className="w-full h-full p-2"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
           <h1>
             <TextGenerateEffect
               className={`${shoulder.className} tracking-widest text-center text-[40px] md:text-5xl lg:text-5xl `}
@@ -61,15 +82,17 @@ const Hero = () => {
           <p
             className={`${poppins.className} head-two text-center text-sm md:text-base lg:text-base tracking-wider`}
           >
-            Hi, I&apos;m Muhammad Dawood Iqbal, A Full Stack Developer Based In
-            Pakistan
+            Hi, I&apos;m Muhammad Dawood Iqbal, A Creative Frontend Developer
+            Based In Pakistan.
           </p>
           <div>
-            <MagicButton
-              title="Explore My Work"
-              icon={<FaArrowRightLong />}
-              position="right"
-            />
+            <Link href={"#projects"}>
+              <MagicButton
+                title="Explore My Work"
+                icon={<FaArrowRightLong />}
+                position="right"
+              />
+            </Link>
           </div>
         </div>
       </div>

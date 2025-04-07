@@ -8,7 +8,8 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title:
+      "I prioritize strong client collaboration by fostering transparent and open communication",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +19,8 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title:
+      "I'm flexible and available for communication across various time zones.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -49,7 +51,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Specializing in advanced AI core development with python",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -75,16 +77,29 @@ export const projects = [
     title: "Clone Porfolio Site Of Sundown Studio",
     des: "This website is a sleek and modern clone of Sundown Studio, highlighting creative projects with smooth animations and bold design. It emphasizes branding, architecture, and digital experiences in a visually engaging way.",
     img: "/p1.svg",
-    iconLists: ["/html.svg", "/css.svg", "/js.svg", "/swiper.svg", "/lenis.png"],
-    link: "github.com/adrianhajdin?tab=repositories",
+    iconLists: [
+      "/html.svg",
+      "/css.svg",
+      "/js.svg",
+      "/swiper.svg",
+      "/lenis.png",
+    ],
+    link: "https://sundown-studio-clone-two.vercel.app/",
   },
   {
     id: 2,
     title: "Muebal House - Luxury Furniture Store",
     des: "Meubal House is a sleek and modern furniture store website, showcasing a variety of stylish and functional home furnishings. It features a user-friendly design with smooth navigation for an enhanced shopping experience.",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/sanity.svg", "shadcn.svg","/c.svg"],
-    link: "github.com/adrianhajdin/zoom-clone",
+    iconLists: [
+      "/next.svg",
+      "/tail.svg",
+      "/ts.svg",
+      "/sanity.svg",
+      "shadcn.svg",
+      "/c.svg",
+    ],
+    link: "https://muebal-house.vercel.app/",
   },
   {
     id: 3,
@@ -92,15 +107,15 @@ export const projects = [
     des: "Face Attributes Finder AI is a web app built with Streamlit that analyzes facial features from uploaded images. It detects attributes such as age, gender, and emotions using AI-based image processing.",
     img: "/p3.svg",
     iconLists: ["/py.svg", "/st.svg", "/gemini.svg"],
-    link: "github.com/adrianhajdin/ai_saas_app",
+    link: "https://https://faceattributesfinderai.streamlit.app/",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "PassXpert - Password Strength Checker & Generator",
+    des: "PassXpert is a modern tool that evaluates password strength in real-time. It detects weak spots and offers tailored suggestions for improvement. Designed to help users create safer, stronger passwords effortlessly.",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "github.com/adrianhajdin/iphone",
+    iconLists: ["/py.svg", "/st.svg"],
+    link: "https://passxpert.streamlit.app/",
   },
 ];
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -7,23 +7,9 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import Image from "next/image";
 
-const images = [
-  "/ts.svg",
-  "/js.svg",
-  "/css.svg",
-  "/html.svg",
-  "/sanity.svg",
-  "/next.svg",
-  "/tail.svg",
-  "/three.svg",
-  "/gsap.svg",
-  "/py.svg",
-  "/st.svg",
-  "/gemini.svg",
-];
+const STAGGER = 0.025;
+const DURATION = 0.25;
 
 export const FloatingNav = ({
   navItems,
@@ -38,16 +24,6 @@ export const FloatingNav = ({
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(true);
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 800);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
@@ -80,31 +56,67 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-full md:mx-20 fixed top-10 inset-x-0  border border-transparent dark:border-white/[0.2] rounded-full dark:bg-transparent backdrop-blur-lg bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-6 py-4  items-center justify-center space-x-2 md:space-x-8",
+          "flex max-w-max mx-auto fixed top-10 inset-x-0  border border-transparent dark:border-white/[0.2] rounded-full dark:bg-transparent backdrop-blur-lg bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-6 py-4  items-center justify-center space-x-4 md:space-x-8",
           className
         )}
       >
-        <div className="flex items-center absolute left-0 md:ml-10">
-          <div className="w-10 h-10 md:ml-0 ml-4 border border-white/[0.2] rounded-full flex items-center justify-center">
-            <Image
-              src={images[index]}
-              alt=""
-              height={50}
-              width={50}
-              className="w-full h-full p-2"
-            />
-          </div>
-        </div>
         {navItems.map((navItem, idx: number) => (
-          <Link
+          <motion.a
             key={`link=${idx}`}
             href={navItem.link}
+            initial="initial"
+            whileHover="hover"
             className={cn(
-              "relative md:ml-0 ml-5 font-semibold tracking-wider dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative overflow-hidden font-semibold tracking-wide dark:text-neutral-50 items-center flex text-neutral-600"
             )}
           >
-            <span className="text-sm">{navItem.name}</span>
-          </Link>
+            <div
+              style={{
+                lineHeight: 0.95,
+              }}
+              className="text-sm uppercase"
+            >
+              {navItem.name.split("").map((l, i) => (
+                <motion.span
+                  className="inline-block"
+                  transition={{
+                    duration: DURATION,
+                    delay: STAGGER * i,
+                  }}
+                  variants={{
+                    initial: { y: 0 },
+                    hover: { y: "-100%" },
+                  }}
+                  key={i}
+                >
+                  {l}
+                </motion.span>
+              ))}
+            </div>
+            <div
+              style={{
+                lineHeight: 0.95,
+              }}
+              className="text-sm uppercase absolute inset-0"
+            >
+              {navItem.name.split("").map((l, i) => (
+                <motion.span
+                  className="inline-block"
+                  transition={{
+                    duration: DURATION,
+                    delay: STAGGER * i,
+                  }}
+                  variants={{
+                    initial: { y: "100%" },
+                    hover: { y: 0 },
+                  }}
+                  key={i}
+                >
+                  {l}
+                </motion.span>
+              ))}
+            </div>
+          </motion.a>
         ))}
       </motion.div>
     </AnimatePresence>

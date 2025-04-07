@@ -130,11 +130,15 @@ export const BentoGridItem = ({
                     {items}
                   </span>
                 ))}
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
+                <span className="py-2 px-3 lg:px-3 line-through text-slate-400 text-xs lg:text-sm opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
+                  Agentic AI
+                </span>
               </div>
               <div className="flex flex-col gap-3 lg:gap-2">
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
-                {["Tailwind", "Python", "GenAI"].map((items) => (
+                <span className="py-2 px-3 lg:px-3 line-through text-slate-400 text-xs lg:text-sm opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
+                  Python
+                </span>
+                {["Tailwind", "Shadcn UI", "Sanity"].map((items) => (
                   <span
                     key={items}
                     className="py-2 px-3 lg:px-3 text-xs lg:text-sm opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
