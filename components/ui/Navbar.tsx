@@ -74,7 +74,7 @@ export const FloatingNav = ({
               style={{
                 lineHeight: 0.95,
               }}
-              className="text-sm uppercase"
+              className="md:text-sm text-xs uppercase"
             >
               {navItem.name.split("").map((l, i) => (
                 <motion.span
@@ -97,7 +97,7 @@ export const FloatingNav = ({
               style={{
                 lineHeight: 0.95,
               }}
-              className="text-sm uppercase absolute inset-0"
+              className="md:text-sm text-xs uppercase absolute inset-0"
             >
               {navItem.name.split("").map((l, i) => (
                 <motion.span
