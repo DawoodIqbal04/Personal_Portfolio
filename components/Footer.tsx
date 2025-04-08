@@ -35,7 +35,7 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <div className="flex items-center justify-between w-full mt-12 md:mt-28">
+      <div className="flex items-center justify-between w-full mt-12 md:mt-28 mb-10">
         <p>CopyRight © 2024-2025 | Muhammad Dawood Iqbal </p>
         <div className="flex items-center gap-4">
           <Link
